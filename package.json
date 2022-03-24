@@ -1,15 +1,21 @@
 {
 	"name": "request_header",
 	"version": "0.0.1",
-	"description": "API project for freeCodeCamp",
+	"description": "Request Header API project for freeCodeCamp",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"dev": "nodemon server.js",
+		"build": "node server.js",
+		"lint": "eslint server.js",
+		"lint:fix": "npm run lint -- --fix",
+		"prettier": "npx prettier server.js --check",
+		"prettier:fix": "npm run prettier -- --write",
+		"format": "npm run prettier:fix && npm run lint:fix"
 	},
 	"dependencies": {
-		"express": "^5.0.0-alpha.2",
-		"cors": "^2.8.1",
-		"dotenv": "^8.2.0"
+		"cors": "^2.8.0",
+		"dotenv": "^16.0.0",
+		"express": "^4.12.4"
 	},
 	"repository": {
 		"type": "git",
@@ -20,5 +26,11 @@
 		"hyperdev",
 		"express"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^8.11.0",
+		"eslint-config-prettier": "^8.5.0",
+		"nodemon": "^2.0.15",
+		"prettier": "2.6.0"
+	}
 }
